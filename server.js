@@ -1,15 +1,13 @@
 "use strict";
 const express = require("express");
 const app = express();
-const shoes = require("./routes/shoes");
-const accessories = require("./routes/accessories");
-const clothes = require("./routes/clothes");
+
+const cart = require("./routes/cart");
 
 app.use(express.static("./public"));
 app.use(express.json());
-app.use("/api/shop", shoes);
-app.use("/api/shop", accessories);
-app.use("/api/shop", clothes);
+
+app.use("/api/shop", cart);
 
 const port = 5000;
 
